@@ -4,15 +4,15 @@
 }
 
 * {
-  outline: 1px solid red;
-}
-
-* {
   padding: 0;
   margin: 0;
   text-decoration: none;
   list-style: none;
   box-sizing: border-box;
+}
+
+* {
+  transition: 0.5s ease;
 }
 
 body {
@@ -55,6 +55,9 @@ img {
 @media (max-width: 420px) {
   body {
     padding-left: 60px;
+  }
+  body section {
+    padding-left: 30px;
   }
 }
 .header {
@@ -367,44 +370,226 @@ img {
     font-size: 16px;
   }
 }
+.about {
+  overflow-y: scroll;
+}
 .about .container .row {
   display: flex;
 }
 .about .container .row .about-left {
+  padding-bottom: 40px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 0 0 47%;
   background-color: #2916e0;
   background-image: url("/assets/images/about-bg.png.webp");
   background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  width: 50%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
+  background-size: contain;
 }
 .about .container .row .about-left .person-img {
-  width: 70%;
+  width: 80%;
   border-radius: 100%;
   overflow: hidden;
+  margin: 15px 0;
 }
 .about .container .row .about-left .profile-text {
   color: #fff;
+  padding: 0 15px;
+  max-width: 550px;
+}
+.about .container .row .about-left .profile-text .left-heading {
+  font-weight: 500;
+  font-size: 36px;
+}
+.about .container .row .about-left .profile-text .profile-info {
+  padding-top: 20px;
+  margin-bottom: 30px;
+}
+.about .container .row .about-left .profile-text .profile-contact .btn {
+  display: inline-block;
+  border: 1px solid #fff;
+  padding: 4px 20px;
+  border-radius: 50px;
+  margin-bottom: 10px;
+  margin-right: 28px;
+  font-weight: 500;
+  text-align: center;
+}
+.about .container .row .about-left .profile-text .profile-contact .btn:hover {
+  background-color: #fff;
+  color: #0f0f0f;
+}
+.about .container .row .about-left .profile-text .profile-contact .mail {
+  text-decoration: underline;
+  font-style: italic;
+}
+.about .container .row .about-left .profile-text .profile-contact .mail:hover {
+  color: #0f0f0f;
 }
 .about .container .row .about-left .profile-text .profile-contact a {
   color: #fff;
+  font-size: 16px;
 }
-.about .container .row .about-right .heading-2 {
-  color: #252525;
+.about .container .row .about-right {
+  flex: 0 0 53%;
+  max-width: 100%;
+  padding: 0 15px;
+}
+.about .container .row .about-right .right-heading {
+  padding-bottom: 8px;
+  margin-bottom: 20px;
+  font-size: 36px;
   font-weight: 600;
   display: inline-block;
-  font-size: 36px;
+  color: #252525;
 }
-.about .container .row .about-right .heading-2:after {
+.about .container .row .about-right .right-heading:after {
   content: "";
-  display: block;
+  display: inline-block;
   width: 100%;
-  height: 2px;
+  height: 3px;
   background-color: #2916e0;
+}
+.about .container .row .about-right .about-text {
+  padding: 50px 0;
+}
+.about .container .row .about-right .about-text p {
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 9px;
+  color: #636363;
+}
+.about .container .row .about-right .skill-card .skills-list {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.about .container .row .about-right .skill-card .skills-list .skill {
+  flex: 0 0 25%;
+  margin-bottom: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+.about .container .row .about-right .skill-card .skills-list .skill .skill-percent {
+  font-size: 16px;
+  line-height: 1;
+  font-weight: 600;
+  color: #252525;
+}
+.about .container .row .about-right .skill-card .skills-list .skill .skill-name {
+  font-size: 20px;
+  font-weight: 600;
+  color: #252525;
+}
+.about .container .row .about-right .skill-card .skills-list .skill .circle-outer {
+  --bar-color: #(variables.$colorBlue);
+  --bg-color: #(variables.$colorLightGray);
+  width: 100px;
+  height: 100px;
+  border-radius: 100%;
+  border: 5px solid blue;
+  background: conic-gradient(var(--bar-color) calc(var(--percentage) * 1%), var(--bg-color) 0);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.about .container .row .about-right .skill-card .skills-list .skill .circle-outer .circle-inner {
+  width: 75%;
+  height: 75%;
+  background-color: #fff;
+  border-radius: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (max-width: 1200px) {
+  .about .container .row {
+    display: block;
+  }
+}
+.blog {
+  overflow-y: scroll;
+}
+.blog .image-container {
+  display: grid;
+  grid-auto-rows: 100px;
+  gap: 20px 20px;
+  grid-template-areas: "image1 image2 image3 image4 image5" "image1 image2 image3 image4 image5" "image1 image6 image3 image7 image5" "image8 image6 image9 image7 image10" "image8 image6 image9 image14 image10" "image11 image12 image9 image14 image15" "image11 image12 image13 image14 image15" "image11 image12 image13 image14 image15";
+}
+.blog .image-container .image-text {
+  position: relative;
+  overflow: hidden;
+}
+.blog .image-container .image-text .text-card {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 30px 20px;
+  background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.9));
+}
+.blog .image-container .image-text .text-card .text-details span,
+.blog .image-container .image-text .text-card .text-details a {
+  color: white;
+}
+.blog .image-container .image-text .text-card .text-details h3 {
+  line-height: 1.6;
+  font-size: 20px;
+}
+.blog .image-container .image-1 {
+  grid-area: image1;
+}
+.blog .image-container .image-2 {
+  grid-area: image2;
+}
+.blog .image-container .image-3 {
+  grid-area: image3;
+}
+.blog .image-container .image-4 {
+  grid-area: image4;
+}
+.blog .image-container .image-5 {
+  grid-area: image5;
+}
+.blog .image-container .image-6 {
+  grid-area: image6;
+}
+.blog .image-container .image-7 {
+  grid-area: image7;
+}
+.blog .image-container .image-8 {
+  grid-area: image8;
+}
+.blog .image-container .image-9 {
+  grid-area: image9;
+}
+.blog .image-container .image-10 {
+  grid-area: image10;
+}
+.blog .image-container .image-11 {
+  grid-area: image11;
+}
+.blog .image-container .image-12 {
+  grid-area: image12;
+}
+.blog .image-container .image-13 {
+  grid-area: image13;
+}
+.blog .image-container .image-14 {
+  grid-area: image14;
+}
+.blog .image-container .image-15 {
+  grid-area: image15;
 }
 
 .gallery {

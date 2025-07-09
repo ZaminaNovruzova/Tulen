@@ -1,0 +1,91 @@
+@use "../abstracts/variables";
+.blog {
+  overflow-y: scroll;
+  .image-container {
+    display: grid;
+    grid-auto-rows: 100px;
+    // grid-auto-flow: row;
+    // grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px 20px;
+    .image-text {
+      position: relative;
+      overflow: hidden;
+      .text-card {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 30px 20px;
+        background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.9));
+        .text-details {
+          span,
+          a {
+            color: white;
+          }
+          h3 {
+            line-height: 1.6;
+            font-size: 20px;
+          }
+        }
+      }
+    }
+    .image-1 {
+      grid-area: image1;
+    }
+    .image-2 {
+      grid-area: image2;
+    }
+    .image-3 {
+      grid-area: image3;
+    }
+    .image-4 {
+      grid-area: image4;
+    }
+    .image-5 {
+      grid-area: image5;
+    }
+    .image-6 {
+      grid-area: image6;
+    }
+    .image-7 {
+      grid-area: image7;
+    }
+    .image-8 {
+      grid-area: image8;
+    }
+    .image-9 {
+      grid-area: image9;
+    }
+    .image-10 {
+      grid-area: image10;
+    }
+    .image-11 {
+      grid-area: image11;
+    }
+    .image-12 {
+      grid-area: image12;
+    }
+    .image-13 {
+      grid-area: image13;
+    }
+    .image-14 {
+      grid-area: image14;
+    }
+    .image-15 {
+      grid-area: image15;
+    }
+    grid-template-areas:
+      "image1 image2 image3 image4 image5"
+      "image1 image2 image3 image4 image5"
+      "image1 image6 image3 image7 image5"
+      "image8 image6 image9 image7 image10"
+      "image8 image6 image9 image14 image10"
+      "image11 image12 image9 image14 image15"
+      "image11 image12 image13 image14 image15"
+      "image11 image12 image13 image14 image15";
+  }
+}

@@ -19,16 +19,45 @@ amma geri qayidanda reski qayidir deyilene gore display none mane olur arasdir
 container-row ehtiyac yoxdursa
 yazmaga da ehtiyac yoxdur 
 
-hero-responsivlikde
-sekil olcuye uygunlassin
-yazilar cox asagida qalib sanki 
-slider jumping var
 
 
-gallery.html de
+Arasdirmalar
 
-grid hell et 
-responsivlik-flex wrap olacaq
-linklere basanda sekiller deyissin 
-1 sekli hover edende yazi cixsin 
-active edende sekil boyusun arxada gradient olsun z index -1
+UMUMI -
+overflow: scroll hec yerde islemir
+class adlarina bir de goz gezdir balina tesir etmemelidir 
+
+HOME 
+
+pis gundedir birde bax
+slider-tullanir
+dasma var
+sekil altdan mesafeli qalir
+yazilarin olculeri pisdir
+sekil responsivlikde normal deyil
+
+
+
+ABOUT 
+skill 314 niye dagilir? eyri dayanir
+my skillsdeki faizle daire elaqesini nece qurmali
+
+
+CONTACT
+responsivlik
+flex wrap wrap olsun
+olculerde sehvlik varmi deye yoxla-esas problemin budur olcu yazanda onceden  dusun yazn ve flex wrap i de hemise dusun 
+margin-padding e cox etibar etme esas flexdir
+
+
+GALLERY
+hover edende yazi gelsin gradientle
+active edende sekil boyusun digerleri arxa fonda qalsin ve gradient kolge olsun 
+responsivlik
+
+
+
+BLOG
+responsivlik qalib
+
+EN SONDA - tekrar olunan kodlari tapib ya class adlarini duzelt ya da base e otur

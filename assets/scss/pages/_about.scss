@@ -1,54 +1,162 @@
 @use "../abstracts/variables";
+
 .about {
+  overflow-y: scroll;
   .container {
     .row {
       display: flex;
       .about-left {
+        padding-bottom: 40px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        flex: 0 0 47%;
         background-color: variables.$colorBlue;
         background-image: url("/assets/images/about-bg.png.webp");
         background-repeat: no-repeat;
-        background-position: center;
-        background-size: cover;
-        width: 50%;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-around;
-        align-items: center;
+        background-size: contain;
         .person-img {
-          width: 70%;
+          width: 80%;
           border-radius: 100%;
           overflow: hidden;
+          margin: 15px 0;
         }
         .profile-text {
           color: variables.$colorWhite;
+          padding: 0 15px;
+          max-width: 550px;
+          .left-heading {
+            font-weight: 500;
+            font-size: 36px;
+          }
+          .profile-info {
+            padding-top: 20px;
+            margin-bottom: 30px;
+          }
           .profile-contact {
-            a {
+            .btn {
               display: inline-block;
-              color: variables.$colorWhite;
               border: 1px solid variables.$colorWhite;
+              padding: 4px 20px;
+              border-radius: 50px;
+              margin-bottom: 10px;
+              margin-right: 28px;
+              font-weight: 500;
+              text-align: center;
+              &:hover {
+                background-color: variables.$colorWhite;
+                color: variables.$colorBlack;
+              }
+            }
+            .mail {
+              text-decoration: underline;
+              font-style: italic;
+              &:hover {
+                color: variables.$colorBlack;
+              }
+            }
+            a {
+              color: variables.$colorWhite;
+              font-size: 16px;
             }
           }
         }
       }
+
       .about-right {
-        width: 50%;
-        .heading-2 {
-          color: variables.$colorLightBlack;
+        flex: 0 0 53%;
+        max-width: 100%;
+        padding: 0 15px;
+        .right-heading {
+          padding-bottom: 8px;
+          margin-bottom: 20px;
+          font-size: 36px;
           font-weight: 600;
           display: inline-block;
-          font-size: 36px;
+          color: variables.$colorLightBlack;
+        
           &:after {
             content: "";
-            display: block;
+            display: inline-block;
             width: 100%;
-            height: 2px;
+            height: 3px;
             background-color: variables.$colorBlue;
           }
         }
-
-        // .about-paragpraph {
-        // }
+        .about-text {
+          padding: 50px 0;
+          p {
+            font-size: 16px;
+            line-height: 1.6;
+            margin-bottom: 9px;
+            color: variables.$colorDarkGray;
+          }
+        }
+        .skill-card {
+          .skills-list {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            .skill {
+              flex: 0 0 25%;
+              margin-bottom: 30px;
+              display: flex;
+              flex-direction: column;
+              justify-content: center;
+              align-items: center;
+              gap: 10px;
+              .skill-percent {
+                font-size: 16px;
+                line-height: 1;
+                font-weight: 600;
+                color: variables.$colorLightBlack;
+              }
+              .skill-name {
+                font-size: 20px;
+                font-weight: 600;
+                color: variables.$colorLightBlack;
+              }
+              .circle-outer {
+                --bar-color: #(variables.$colorBlue);
+                --bg-color: #(variables.$colorLightGray);
+                width: 100px;
+                height: 100px;
+                border-radius: 100%;
+                border: 5px solid blue;
+          
+                background: conic-gradient(
+                  var(--bar-color) calc(var(--percentage) * 1%),
+                  var(--bg-color) 0
+                );
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                .circle-inner {
+                  width: 75%;
+                  height: 75%;
+                  background-color: variables.$colorWhite;
+                  border-radius: 100%;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                }
+              }
+            }
+          }
+        }
       }
     }
   }
 }
+
+@media (max-width: 1200px) {
+  .about {
+    .container {
+      .row {
+        display: block;
+      }
+    }
+  }
+}
+
