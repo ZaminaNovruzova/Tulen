@@ -369,7 +369,6 @@ img {
 }
 .about .container .row {
   display: flex;
-  flex-wrap: wrap;
 }
 .about .container .row .about-left {
   background-color: #2916e0;

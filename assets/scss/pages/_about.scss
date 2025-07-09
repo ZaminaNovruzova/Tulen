@@ -1,9 +1,8 @@
-@use "../variables";
+@use "../abstracts/variables";
 .about {
   .container {
     .row {
       display: flex;
-      flex-wrap: wrap;
       .about-left {
         background-color: variables.$colorBlue;
         background-image: url("/assets/images/about-bg.png.webp");
@@ -24,12 +23,15 @@
           color: variables.$colorWhite;
           .profile-contact {
             a {
+              display: inline-block;
               color: variables.$colorWhite;
+              border: 1px solid variables.$colorWhite;
             }
           }
         }
       }
       .about-right {
+        width: 50%;
         .heading-2 {
           color: variables.$colorLightBlack;
           font-weight: 600;
