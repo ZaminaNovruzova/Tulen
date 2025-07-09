@@ -1,0 +1,152 @@
+@use "../variables";
+@use "../animations";
+
+.hero {
+  .hero-slider {
+    width: 100vw;
+    height: 100vh;
+    .swiper-wrapper {
+      display: flex;
+      .swiper-slide {
+        flex: 1 1 10%;
+        position: relative;
+        transition: all 0.5s ease;
+
+        .background-img {
+          width: 100%;
+          height: 100%;
+          overflow: hidden;
+          z-index: 0;
+        }
+        .img-gradient {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background-color: variables.$colorBlack;
+          opacity: 0.6;
+          z-index: 10;
+        }
+        .card-text {
+          width: 100%;
+          height: 100%;
+          position: absolute;
+          top: 0;
+          left: 0;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          opacity: 0;
+          margin: 0 20px;
+          padding-bottom: 50px;
+          z-index: 20;
+          color: variables.$colorWhite;
+
+          .hero-heading {
+            font-size: clamp(1rem, 2rem, 3rem);
+            text-wrap: wrap;
+            font-weight: 700;
+            margin-bottom: 20px;
+          }
+          .author {
+            display: flex;
+            align-items: center;
+            .author-img {
+              width: 60px;
+              height: 60px;
+              border-radius: 100%;
+              margin-right: 10px;
+              overflow: hidden;
+            }
+            .author-name {
+              h4 {
+                font-weight: 600;
+                font-size: 24px;
+              }
+            }
+          }
+        }
+      }
+      .swiper-slide:hover {
+        flex: 1 1 70%;
+        .img-gradient {
+          opacity: 0;
+        }
+        .card-text {
+          opacity: 1;
+          animation: animateTop 1s ease-in-out forwards;
+        }
+      }
+
+      .slide-1 {
+        z-index: 1;
+      }
+      .slide-2 {
+        z-index: 2;
+      }
+      .slide-3 {
+        z-index: 3;
+      }
+      .slide-4 {
+        z-index: 4;
+      }
+      .slide-5 {
+        z-index: 5;
+      }
+    }
+    .swiper-pagination {
+      display: none;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    .hero-slider {
+      .swiper-wrapper {
+        .swiper-slide {
+          flex: none;
+          width: 100%;
+          .background-img {
+            max-width: 100%;
+          }
+          .card-text {
+            opacity: 1;
+            align-items: center;
+
+            text-align: center;
+            animation: animateTop 1s ease-in-out forwards;
+            margin: 0;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 425px) {
+  .hero {
+    .hero-slider {
+      .swiper-wrapper {
+        .swiper-slide {
+          .card-text {
+            .hero-heading {
+              font-size: 16px;
+            }
+            .author {
+              display: flex;
+              align-items: center;
+              flex-direction: column;
+              .author-name {
+                h4 {
+                  font-size: 16px;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

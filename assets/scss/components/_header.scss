@@ -1,0 +1,184 @@
+@use "../variables";
+
+.header {
+  width: 90px;
+  position: fixed; //ekran scroll olanda sabit qalacaq
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  input {
+    display: none;
+  }
+  .menu-wrapper {
+    background-color: variables.$colorWhite;
+    height: 100%;
+    width: 90px;
+    position: fixed;
+    top: 0;
+    .burger {
+      display: block;
+      height: 90px;
+      background-color: variables.$colorBlack;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 5px;
+      span {
+        display: inline-block;
+        width: 30px;
+        height: 4px;
+        background-color: variables.$colorWhite;
+        cursor: pointer;
+        border-radius: 2px;
+      }
+    }
+    .menu-social {
+      height: calc(100% - 90px);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 50px;
+      .social-item {
+        a {
+          font-size: 18px;
+          color: variables.$colorLightBlack;
+          display: inline-block;
+          &:hover {
+            border-radius: 100%;
+            background-color: variables.$colorForHover;
+            padding: 4px 8px;
+          }
+        }
+      }
+    }
+  }
+  .menu-content {
+    background-color: variables.$colorWhite;
+    width: 270px;
+    height: 100%;
+    position: fixed;
+    left: -280px;
+    transition: 0.5s ease;
+    opacity: 0;
+    .menu-header {
+      height: 90px;
+      display: flex;
+      .arrow {
+        width: 90px;
+        background-color: variables.$colorBlack;
+        color: variables.$colorWhite;
+        cursor: pointer;
+        font-size: 30px;
+        text-align: center;
+        padding-top: 23px;
+      }
+      .logo-png {
+        width: calc(100% - 90px);
+        background-color: variables.$colorBlue;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+    .nav-bar {
+      height: calc(100% - 250px); //nese olcu duz deyil sorus
+      .nav-links {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+        .nav-item {
+          a {
+            font-size: 30px;
+            font-weight: 600;
+            color: variables.$colorLightGray;
+            &:hover {
+              color: variables.$colorBlue;
+            }
+          }
+        }
+      }
+    }
+    .menu-footer {
+      text-align: center;
+      padding: 0 15px;
+      .social-media {
+        display: flex;
+        gap: 30px;
+        justify-content: center;
+        margin-bottom: 15px;
+        .social-icon {
+          a {
+            display: inline-block;
+            font-size: 18px;
+            color: variables.$colorLightGray;
+            margin-bottom: 10px;
+            &:hover {
+              border-radius: 100%;
+              background-color: variables.$colorForHover;
+              padding: 5px 8px;
+            }
+          }
+        }
+      }
+      .copyright-text {
+        font-weight: 500;
+        padding-bottom: 40px;
+        p {
+          margin-bottom: 1rem;
+          i {
+            color: variables.$colorRed;
+          }
+          a {
+            color: variables.$colorLightGray;
+          }
+        }
+      }
+    }
+  }
+  #burger:checked ~ .menu-wrapper {
+    opacity: 0;
+  }
+  #burger:checked ~ .menu-content {
+    left: 0;
+    opacity: 1;
+  }
+}
+
+@media (max-width: 576px) {
+  .header {
+    .menu-social {
+      gap: 30px;
+    }
+    .menu-content {
+      .nav-bar {
+        .nav-links {
+          .nav-item {
+            a {
+              font-size: 20px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 420px) {
+  .header {
+    width: 60px;
+    .menu-content {
+      width: 100%;
+      left: -100%;
+      .menu-footer {
+        .copyright-text {
+          padding-bottom: 15px;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,34 @@
+header daki menu social a ehtiyac varmi ul varken sorus-yoxdur (ozum tapdim)
+adlanmalari yoxlatdir esas da rengleri deqiqlesdir gor duz vermisen 
+header cox yerde width height yazmisan kod tekrari kimi gorunur onu yeniden arasdir 
+(her yere width height yazmaq lazim deyil ancaq uygunasmayan yerlere-ozum tapdim ) 
+
+isteyirem ki header deki boz linkler hemin linke daxil olanda goy olsun amma basqa sehifeye
+kecid edende sifirlansin tekrar boz olsun visited kimi rengi deyisik qalmasin 
+
+header deki input problemini hele ki hell ede bilmedim-done+
+body e display flex vermek duzgundur?header ve main yan yana getirmek meqsedi idi-deyil
+bu syatda row container e ehtiyac yoxdur ee sanki -amma yene de yazdim
+formalite icabi yazmisam yene de sorus deqiqlesdir
+
+
+1. header de menu-content transition ile gelir 
+amma geri qayidanda reski qayidir deyilene gore display none mane olur arasdir 
+
+2.
+container-row ehtiyac yoxdursa
+yazmaga da ehtiyac yoxdur 
+
+hero-responsivlikde
+sekil olcuye uygunlassin
+yazilar cox asagida qalib sanki 
+slider jumping var
+
+
+gallery.html de
+
+grid hell et 
+responsivlik-flex wrap olacaq
+linklere basanda sekiller deyissin 
+1 sekli hover edende yazi cixsin 
+active edende sekil boyusun arxada gradient olsun z index -1

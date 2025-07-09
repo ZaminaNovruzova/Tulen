@@ -1,0 +1,52 @@
+@use "../variables";
+.about {
+  .container {
+    .row {
+      display: flex;
+      flex-wrap: wrap;
+      .about-left {
+        background-color: variables.$colorBlue;
+        background-image: url("/assets/images/about-bg.png.webp");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        .person-img {
+          width: 70%;
+          border-radius: 100%;
+          overflow: hidden;
+        }
+        .profile-text {
+          color: variables.$colorWhite;
+          .profile-contact {
+            a {
+              color: variables.$colorWhite;
+            }
+          }
+        }
+      }
+      .about-right {
+        .heading-2 {
+          color: variables.$colorLightBlack;
+          font-weight: 600;
+          display: inline-block;
+          font-size: 36px;
+          &:after {
+            content: "";
+            display: block;
+            width: 100%;
+            height: 2px;
+            background-color: variables.$colorBlue;
+          }
+        }
+
+        // .about-paragpraph {
+        // }
+      }
+    }
+  }
+}
