@@ -52,12 +52,14 @@ img {
   object-fit: cover;
 }
 
-
 @media (max-width: 420px) {
   body {
     padding-left: 60px;
     section {
       padding-left: 30px;
+    }
+    .container {
+      width: 95%;
     }
   }
 }

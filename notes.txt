@@ -43,13 +43,6 @@ skill 314 niye dagilir? eyri dayanir
 my skillsdeki faizle daire elaqesini nece qurmali
 
 
-CONTACT
-responsivlik
-flex wrap wrap olsun
-olculerde sehvlik varmi deye yoxla-esas problemin budur olcu yazanda onceden  dusun yazn ve flex wrap i de hemise dusun 
-margin-padding e cox etibar etme esas flexdir
-
-
 GALLERY
 hover edende yazi gelsin gradientle
 active edende sekil boyusun digerleri arxa fonda qalsin ve gradient kolge olsun 

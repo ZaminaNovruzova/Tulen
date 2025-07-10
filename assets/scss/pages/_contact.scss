@@ -7,6 +7,7 @@
       display: flex;
       align-items: flex-end;
       justify-content: center;
+
       .map {
         height: 100vh;
         width: 100vw;
@@ -14,25 +15,29 @@
         iframe {
           width: 100%;
           height: 100%;
+          z-index: -1;
         }
       }
       .contact-card {
-        position: absolute;
-        bottom: 87px;
+        position: fixed;
+        bottom: 15%;
         display: flex;
-        width: 100%;
+        width: 75%;
+        justify-content: space-around;
+        align-items: center;
+        flex-wrap: wrap;
         background-color: variables.$colorWhite;
         border-radius: 8px;
         padding-top: 40px;
+        z-index: 2;
         .contact-info {
           display: flex;
           flex-direction: column;
           align-items: center;
+          text-wrap: nowrap;
+          flex: 0 0 25%;
           text-align: center;
           margin-bottom: 35px;
-          flex: 33.33%;
-          padding: 0 15px;
-          flex-wrap: wrap;
           i {
             display: block;
             font-size: 48px;
@@ -40,7 +45,6 @@
             margin-bottom: 20px;
           }
           .details {
-            margin-bottom: 0;
             font-size: 18px;
             color: variables.$colorLightBlack;
             font-weight: 500;
@@ -50,9 +54,9 @@
             }
             a {
               color: variables.$colorLightBlack;
-            }
-            a:hover {
-              color: variables.$colorLightGray;
+              &:hover {
+                color: variables.$colorLightGray;
+              }
             }
           }
         }
@@ -60,49 +64,31 @@
     }
   }
 }
-
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .contact {
     .container {
       .row {
         .contact-card {
-          position: absolute;
-          bottom: 87px;
-          display: flex;
-          width: 100%;
-          max-width: 1120px;
-          background-color: variables.$colorWhite;
-          border-radius: 8px;
-          padding-top: 40px;
+          max-width: 60%;
           .contact-info {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-            margin-bottom: 35px;
-            flex: 33.33%;
-            padding: 0 15px;
-            flex-wrap: wrap;
-            i {
-              display: block;
-              font-size: 48px;
-              color: variables.$colorBlue;
-              margin-bottom: 20px;
-            }
+            flex: 100%;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 425px) {
+  .contact {
+    .container {
+      .row {
+        .contact-card {
+          .contact-info {
             .details {
-              margin-bottom: 0;
-              font-size: 18px;
-              color: variables.$colorLightBlack;
-              font-weight: 500;
-              span {
-                color: variables.$colorLightGray;
-                font-weight: 400;
-              }
+              span,
               a {
-                color: variables.$colorLightBlack;
-              }
-              a:hover {
-                color: variables.$colorLightGray;
+                display: block;
               }
             }
           }
