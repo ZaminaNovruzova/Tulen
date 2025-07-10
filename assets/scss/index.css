@@ -50,6 +50,7 @@ img {
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+  display: block;
 }
 
 @media (max-width: 420px) {
@@ -302,11 +303,8 @@ img {
 }
 .hero .hero-slider .swiper-wrapper .swiper-slide .card-text .author .author {
   position: absolute;
-  top: 0;
   display: flex;
-  width: 100%;
-  height: 100%;
-  align-items: flex-end;
+  align-items: center;
 }
 .hero .hero-slider .swiper-wrapper .swiper-slide .card-text .author .author .author-img {
   width: 60px;
@@ -526,9 +524,9 @@ img {
 }
 .blog .image-container {
   display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   grid-auto-rows: 100px;
   gap: 20px 20px;
-  grid-template-areas: "image1 image2 image3 image4 image5" "image1 image2 image3 image4 image5" "image1 image6 image3 image7 image5" "image8 image6 image9 image7 image10" "image8 image6 image9 image14 image10" "image11 image12 image9 image14 image15" "image11 image12 image13 image14 image15" "image11 image12 image13 image14 image15";
 }
 .blog .image-container .image-text {
   position: relative;
@@ -554,50 +552,27 @@ img {
   line-height: 1.6;
   font-size: 20px;
 }
-.blog .image-container .image-1 {
-  grid-area: image1;
-}
-.blog .image-container .image-2 {
-  grid-area: image2;
-}
-.blog .image-container .image-3 {
-  grid-area: image3;
-}
-.blog .image-container .image-4 {
-  grid-area: image4;
-}
-.blog .image-container .image-5 {
-  grid-area: image5;
-}
-.blog .image-container .image-6 {
-  grid-area: image6;
-}
-.blog .image-container .image-7 {
-  grid-area: image7;
-}
-.blog .image-container .image-8 {
-  grid-area: image8;
-}
-.blog .image-container .image-9 {
-  grid-area: image9;
-}
-.blog .image-container .image-10 {
-  grid-area: image10;
-}
-.blog .image-container .image-11 {
-  grid-area: image11;
-}
+.blog .image-container .image-1,
+.blog .image-container .image-3,
+.blog .image-container .image-5,
+.blog .image-container .image-6,
+.blog .image-container .image-9,
+.blog .image-container .image-11,
 .blog .image-container .image-12 {
-  grid-area: image12;
+  grid-row: span 3;
 }
-.blog .image-container .image-13 {
-  grid-area: image13;
+.blog .image-container .image-2,
+.blog .image-container .image-4,
+.blog .image-container .image-7,
+.blog .image-container .image-8,
+.blog .image-container .image-10,
+.blog .image-container .image-13,
+.blog .image-container .image-14,
+.blog .image-container .image-15 {
+  grid-row: span 2;
 }
 .blog .image-container .image-14 {
-  grid-area: image14;
-}
-.blog .image-container .image-15 {
-  grid-area: image15;
+  grid-row: span 4;
 }
 
 .gallery {
@@ -611,19 +586,21 @@ img {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  width: 100%;
-  height: 90px;
-  flex-wrap: wrap;
+  width: calc(100% - 100px);
+  max-width: calc(100% - 100px);
   z-index: 30;
+  padding: 20px 10px;
 }
 .gallery .gallery-title .gallery-heading h2 {
   font-size: 24px;
   color: #252525;
   font-weight: 600;
+  margin-bottom: 5px;
 }
 .gallery .gallery-title .subtitles {
   display: flex;
-  gap: 30px;
+  gap: 15px;
+  flex: 0 0 10%;
 }
 .gallery .gallery-title .subtitles .subtitle-item {
   font-size: 18px;
@@ -639,20 +616,17 @@ img {
 .gallery .gallery-photos {
   display: grid;
   grid-auto-rows: 250px;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 20px 20px;
   padding-top: 90px;
-  grid-template-areas: "photo1 photo1 photo2 photo3 photo4" "photo1 photo1 photo5 photo5 photo4" "photo6 photo6 photo5 photo5 photo7" "photo8 photo9 photo9 photo10 photo11";
 }
 .gallery .gallery-photos .photo {
   position: relative;
 }
 .gallery .gallery-photos .photo .author {
   position: absolute;
-  top: 0;
   display: flex;
-  width: 100%;
-  height: 100%;
-  align-items: flex-end;
+  align-items: center;
 }
 .gallery .gallery-photos .photo .author .author-img {
   width: 60px;
@@ -666,48 +640,52 @@ img {
   font-size: 24px;
   color: #fff;
 }
+.gallery .gallery-photos .photo::before {
+  content: "";
+  height: 100%;
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.8));
+  opacity: 0;
+  z-index: 4;
+}
+.gallery .gallery-photos .photo:hover::before {
+  opacity: 1;
+}
 .gallery .gallery-photos .photo .author {
   font-size: 16px;
   opacity: 0;
+  z-index: 5;
+  bottom: 30px;
+  left: 30px;
 }
-.gallery .gallery-photos .photo .author:hover {
-  background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.8));
+.gallery .gallery-photos .photo:hover .author {
   opacity: 1;
 }
-.gallery .gallery-photos .photo-1 {
-  grid-area: photo1;
-}
-.gallery .gallery-photos .photo-2 {
-  grid-area: photo2;
-}
-.gallery .gallery-photos .photo-3 {
-  grid-area: photo3;
+.gallery .gallery-photos .photo-1,
+.gallery .gallery-photos .photo-5 {
+  grid-row: span 2;
+  grid-column: span 2;
 }
 .gallery .gallery-photos .photo-4 {
-  grid-area: photo4;
+  grid-row: span 2;
 }
-.gallery .gallery-photos .photo-5 {
-  grid-area: photo5;
-}
-.gallery .gallery-photos .photo-6 {
-  grid-area: photo6;
-}
-.gallery .gallery-photos .photo-7 {
-  grid-area: photo7;
-}
-.gallery .gallery-photos .photo-8 {
-  grid-area: photo8;
-}
+.gallery .gallery-photos .photo-6,
 .gallery .gallery-photos .photo-9 {
-  grid-area: photo9;
-}
-.gallery .gallery-photos .photo-10 {
-  grid-area: photo10;
-}
-.gallery .gallery-photos .photo-11 {
-  grid-area: photo11;
+  grid-column: span 2;
 }
 
+@media (max-width: 1024px) {
+  .gallery .gallery-title {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .gallery .gallery-title .subtitles {
+    flex-wrap: wrap;
+    gap: 15px 20px;
+    justify-content: flex-start;
+  }
+}
 .contact .container .row {
   position: relative;
   display: flex;

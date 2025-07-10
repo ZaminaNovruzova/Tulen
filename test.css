@@ -1,22 +1,97 @@
-.author {
-  position: absolute;
-  top: 0;
-  display: flex;
-  align-items: center;
-
-  /* // width: 100%;
-  // height: 100%; */
-  .author-img {
-    width: 60px;
-    height: 60px;
-    border-radius: 100%;
-    margin-right: 10px;
-    overflow: hidden;
-  }
-  .author-name {
-    h4 {
-      font-weight: 600;
-      font-size: 24px;
+  .image-1 {
+      grid-area: image1;
     }
+    .image-2 {
+      grid-area: image2;
+    }
+    .image-3 {
+      grid-area: image3;
+    }
+    .image-4 {
+      grid-area: image4;
+    }
+    .image-5 {
+      grid-area: image5;
+    }
+    .image-6 {
+      grid-area: image6;
+    }
+    .image-7 {
+      grid-area: image7;
+    }
+    .image-8 {
+      grid-area: image8;
+    }
+    .image-9 {
+      grid-area: image9;
+    }
+    .image-10 {
+      grid-area: image10;
+    }
+    .image-11 {
+      grid-area: image11;
+    }
+    .image-12 {
+      grid-area: image12;
+    }
+    .image-13 {
+      grid-area: image13;
+    }
+    .image-14 {
+      grid-area: image14;
+    }
+    .image-15 {
+      grid-area: image15;
+    }
+    grid-template-areas:
+      "image1 image2 image3 image4 image5"
+      "image1 image2 image3 image4 image5"
+      "image1 image6 image3 image7 image5"
+      "image8 image6 image9 image7 image10"
+      "image8 image6 image9 image14 image10"
+      "image11 image12 image9 image14 image15"
+      "image11 image12 image13 image14 image15"
+      "image11 image12 image13 image14 image15";
+
+
+
+          .photo-1 {
+      grid-area: photo1;
+    }
+    .photo-2 {
+      grid-area: photo2;
+    }
+    .photo-3 {
+      grid-area: photo3;
+    }
+    .photo-4 {
+      grid-area: photo4;
+    }
+    .photo-5 {
+      grid-area: photo5;
+    }
+    .photo-6 {
+      grid-area: photo6;
+    }
+    .photo-7 {
+      grid-area: photo7;
+    }
+    .photo-8 {
+      grid-area: photo8;
+    }
+    .photo-9 {
+      grid-area: photo9;
+    }
+    .photo-10 {
+      grid-area: photo10;
+    }
+    .photo-11 {
+      grid-area: photo11;
+    }
+
+    grid-template-areas:
+      "photo1 photo1 photo2 photo3 photo4"
+      "photo1 photo1 photo5 photo5 photo4"
+      "photo6 photo6 photo5 photo5 photo7"
+      "photo8 photo9 photo9 photo10 photo11";
   }
-}

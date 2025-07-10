@@ -11,20 +11,22 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
-    width: 100%;
-    height: 90px;
-    flex-wrap: wrap;
+    width: calc(100% - 100px);
+    max-width: calc(100% - 100px);
     z-index: 30;
+    padding:20px 10px;
     .gallery-heading {
       h2 {
         font-size: 24px;
         color: variables.$colorLightBlack;
         font-weight: 600;
+        margin-bottom: 5px;
       }
     }
     .subtitles {
       display: flex;
-      gap: 30px;
+      gap: 15px;
+      flex: 0 0 10%;
       .subtitle-item {
         font-size: 18px;
         font-weight: 500;
@@ -41,59 +43,63 @@
   .gallery-photos {
     display: grid;
     grid-auto-rows: 250px;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 20px 20px;
     padding-top: 90px;
     .photo {
       @include mixins.authorProfile;
       position: relative;
+      &::before {
+        content: "";
+        height: 100%;
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.8));
+        opacity: 0;
+        z-index: 4;
+      }
+      &:hover::before {
+        opacity: 1;
+      }
       .author {
         font-size: 16px;
         opacity: 0;
-        &:hover {
-          background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.8));
-          opacity: 1;
-        }
+        z-index: 5;
+        bottom: 30px;
+        left: 30px;
       }
     }
 
-    .photo-1 {
-      grid-area: photo1;
+    .photo:hover {
+      .author {
+        opacity: 1;
+      }
     }
-    .photo-2 {
-      grid-area: photo2;
-    }
-    .photo-3 {
-      grid-area: photo3;
+    .photo-1,
+    .photo-5 {
+      grid-row: span 2;
+      grid-column: span 2;
     }
     .photo-4 {
-      grid-area: photo4;
+      grid-row: span 2;
     }
-    .photo-5 {
-      grid-area: photo5;
-    }
-    .photo-6 {
-      grid-area: photo6;
-    }
-    .photo-7 {
-      grid-area: photo7;
-    }
-    .photo-8 {
-      grid-area: photo8;
-    }
+    .photo-6,
     .photo-9 {
-      grid-area: photo9;
+      grid-column: span 2;
     }
-    .photo-10 {
-      grid-area: photo10;
-    }
-    .photo-11 {
-      grid-area: photo11;
-    }
+  }
+}
 
-    grid-template-areas:
-      "photo1 photo1 photo2 photo3 photo4"
-      "photo1 photo1 photo5 photo5 photo4"
-      "photo6 photo6 photo5 photo5 photo7"
-      "photo8 photo9 photo9 photo10 photo11";
+@media (max-width: 1024px) {
+  .gallery {
+    .gallery-title {
+      flex-direction: column;
+      align-items: flex-start;
+      .subtitles {
+        flex-wrap: wrap;
+        gap: 15px 20px;
+        justify-content: flex-start;
+      }
+    }
   }
 }

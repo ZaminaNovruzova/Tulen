@@ -44,13 +44,13 @@ my skillsdeki faizle daire elaqesini nece qurmali
 
 
 GALLERY
-hover edende yazi gelsin gradientle
+yaziya basanda bezi sekiller yoxa cixsin bezileri qalsin
 active edende sekil boyusun digerleri arxa fonda qalsin ve gradient kolge olsun 
 responsivlik
 
 
 
 BLOG
-responsivlik qalib
+row qaldi
 
 EN SONDA - tekrar olunan kodlari tapib ya class adlarini duzelt ya da base e otur
