@@ -21,9 +21,10 @@
         padding: 30px 20px;
         background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.9));
         .text-details {
+          padding: 0 10px;
           span,
           a {
-            color: white;
+            color: variables.$colorWhite;
           }
           h3 {
             line-height: 1.6;

@@ -8,3 +8,15 @@
     opacity: 1;
   }
 }
+
+@keyframes animateTopMobile {
+  from {
+    opacity: 0;
+    transform: translateY(-100px);
+  }
+  to {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+
